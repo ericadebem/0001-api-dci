@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import { customersRouter } from "./customersRoute.js";
+import { employeeRouter } from "./employeeRouter.js";
 
 const app = express();
 
