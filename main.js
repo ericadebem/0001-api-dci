@@ -1,14 +1,12 @@
 import express from "express";
 import mongoose from "mongoose";
-import { travelRouter } from "./travelRoute.js";
+import { customersRouter } from "./customersRoute.js";
 
 const app = express();
 
-app.use("/travel", travelRouter);
-
-app.use("/", (req, res) => {
-  res.send("Hallo");
-});
+app.use(express.json());
+app.use("/customer", customersRouter);
+app.use("/employee", employeeRouter);
 
 const conectDB = async () => {
   try {
@@ -19,8 +17,8 @@ const conectDB = async () => {
     console.error(error);
   }
 };
-    conectDB().then(()=> {
-    app.listen(5000, () => console.log("server listening on port 5000"));  
-
-
-    })
+conectDB().then(() => {
+  app.listen(5000, () => {
+    console.log("server listening on port 5000");
+  });
+});

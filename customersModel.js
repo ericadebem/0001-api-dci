@@ -7,6 +7,8 @@ export const customersSchema = new mongoose.Schema(
   },
   {
     collection: "customers",
+    versionKey: false,
+    timestamps: true,
   }
 );
 
