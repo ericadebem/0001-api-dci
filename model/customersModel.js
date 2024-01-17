@@ -12,7 +12,7 @@ export const customersSchema = new mongoose.Schema(
     age: {
       type: Number,
       require: [true, "You must add an age"],
-      maxlength: 50,
+      maxlength: 3,
       trim: true,
     },
   },
