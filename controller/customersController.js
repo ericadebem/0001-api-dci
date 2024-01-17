@@ -1,5 +1,10 @@
 import { Customers } from "../model/customersModel.js";
 
+const handleError = (error) => {
+  console.error(error.msg);
+  return res.status(500).json(error);
+}
+
 export const getCustomer = async (req, res) => {
   try {
     const customer = await Customers.findById(req.params.id);
@@ -7,8 +12,7 @@ export const getCustomer = async (req, res) => {
       ? res.status(201).json({ customer })
       : res.status(404).json({ msg: "Customer not found" });
   } catch (error) {
-    console.error(error.msg);
-    res.status(500).json(error);
+      handleError(error)
   }
 };
 export const getAllCustomers = async (req, res) => {
@@ -16,8 +20,7 @@ export const getAllCustomers = async (req, res) => {
     const customer = await Customers.find({});
     res.status(201).json({ customer });
   } catch (error) {
-    console.error(error.msg);
-    res.status(500).json(error);
+    handleError(error)
   }
 };
 export const createCustomer = async (req, res) => {
@@ -26,8 +29,7 @@ export const createCustomer = async (req, res) => {
     console.log(req.body);
     res.status(201).json({ customer });
   } catch (error) {
-    console.error(error.msg);
-    res.status(500).json(error);
+    handleError(error)
   }
 };
 export const updateCustomer = async (req, res) => {
@@ -41,8 +43,7 @@ export const updateCustomer = async (req, res) => {
       ? res.status(201).json({ customer })
       : res.status(404).json({ msg: "Customer not found" });
   } catch (error) {
-    console.error(error);
-    res.status(500).json(error);
+    handleError(error)
   }
 };
 export const deleteCustomer = async (req, res) => {
@@ -50,7 +51,6 @@ export const deleteCustomer = async (req, res) => {
     const customer = await Customers.findByIdAndDelete(req.params.id);
     res.status(201).json({ customer });
   } catch (error) {
-    console.error(error);
-    res.status(500).json(error);
+    handleError(error)
   }
 };
