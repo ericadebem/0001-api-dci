@@ -5,7 +5,7 @@ export const bussSchema = new mongoose.Schema(
       
     },
     {
-      collection: "customers",
+      collection: "buss",
       versionKey: false,
       timestamps: true,
     }
