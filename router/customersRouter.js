@@ -5,7 +5,7 @@ import {
   deleteCustomer,
   getAllCustomers,
   updateCustomer,
-} from "./customersController.js";
+} from "../controller/customersController.js";
 
 export const customersRouter = express.Router();
 

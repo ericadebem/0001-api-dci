@@ -1,7 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
-import { customersRouter } from "./customersRoute.js";
-import { employeeRouter } from "./employeeRouter.js";
+import { customersRouter } from "./router/customersRouter.js";
+import { employeeRouter } from "./router/employeeRouter.js";
 
 const app = express();
 

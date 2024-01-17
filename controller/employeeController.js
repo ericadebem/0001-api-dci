@@ -1,4 +1,4 @@
-import { Employee } from "./employeeModel.js";
+import { Employee } from "../model/employeeModel.js";
 
 export const getEmployee = async (req, res) => {
   try {
