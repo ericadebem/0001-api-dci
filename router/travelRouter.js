@@ -5,7 +5,7 @@ import { getTravel, postTravel, updateTravel, deleteTravel } from "../controller
 export const travelRouter = express.Router()
 
 travelRouter.route("/").post(postTravel)
-travelRouter.route("/:id").get(getTravel).update(updateTravel).delete(deleteTravel)
+travelRouter.route("/:id").get(getTravel).patch(updateTravel).delete(deleteTravel)
 
 
 

@@ -24,9 +24,18 @@ export const employeeSchema = new mongoose.Schema(
     },
     adresse: String,
     vacationDays: Number,
-    vacationTake: [singleAbsenceSchema],
-    sickDays: [singleAbsenceSchema],
-    startDate: Date,
+    vacationTake: {
+      type: [singleAbsenceSchema],
+      default: []
+    },
+    sickDays: {
+      type: [singleAbsenceSchema],
+      default: []
+    },
+    startDate: {
+      type: Date,
+      default: new Date()
+    } 
   },
   {
     collection: "employee",

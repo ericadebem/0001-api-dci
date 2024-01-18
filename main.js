@@ -7,11 +7,13 @@ import { bussRouter } from "./router/bussRouter.js"
 
 const app = express();
 
+const baseUrl = "/api"
+
 app.use(express.json());
-app.use("/customer", customersRouter);
-app.use("/employee", employeeRouter);
-app.use("/travel", travelRouter);
-app.use("/buss" , bussRouter)
+app.use(`${baseUrl}/customer`, customersRouter);
+app.use(`${baseUrl}/employee`, employeeRouter);
+app.use(`${baseUrl}/travel`, travelRouter);
+app.use(`${baseUrl}/buss`, bussRouter)
 
 const conectDB = async () => {
   try {
