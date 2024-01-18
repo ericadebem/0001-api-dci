@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Lynde Petyankin",
+    "sector": "Construction Foreman",
+    "email": "lpetyankin0@constantcontact.com",
+    "adresse": "1 Mcbride Point",
+    "vacationDays": 22
+  },
+  {
+    "name": "Anett Shutt",
+    "sector": "Estimator",
+    "email": "ashutt1@latimes.com",
+    "adresse": "5506 Dennis Circle",
+    "vacationDays": 19
+  },
+  {
+    "name": "Bobine Jack",
+    "sector": "Construction Expeditor",
+    "email": "bjack2@independent.co.uk",
+    "adresse": "19 Bunker Hill Circle",
+    "vacationDays": 21
+  },
+  {
+    "name": "Bria Beardwood",
+    "sector": "Architect",
+    "email": "bbeardwood3@cargocollective.com",
+    "adresse": "89908 Thierer Crossing",
+    "vacationDays": 20
+  },
+  {
+    "name": "Gawen Marien",
+    "sector": "Surveyor",
+    "email": "gmarien4@diigo.com",
+    "adresse": "78 Coolidge Drive",
+    "vacationDays": 25
+  },
+  {
+    "name": "April Akhurst",
+    "sector": "Engineer",
+    "email": "aakhurst5@cisco.com",
+    "adresse": "20954 South Alley",
+    "vacationDays": 4
+  },
+  {
+    "name": "Goober Meininger",
+    "sector": "Estimator",
+    "email": "gmeininger6@lycos.com",
+    "adresse": "696 Logan Avenue",
+    "vacationDays": 16
+  },
+  {
+    "name": "Maude Fowkes",
+    "sector": "Architect",
+    "email": "mfowkes7@jiathis.com",
+    "adresse": "54863 Dakota Junction",
+    "vacationDays": 5
+  },
+  {
+    "name": "Lannie Breznovic",
+    "sector": "Architect",
+    "email": "lbreznovic8@mashable.com",
+    "adresse": "28502 Debra Plaza",
+    "vacationDays": 37
+  },
+  {
+    "name": "Hermann Attock",
+    "sector": "Surveyor",
+    "email": "hattock9@stanford.edu",
+    "adresse": "35126 Elgar Way",
+    "vacationDays": 8
+  }
+]

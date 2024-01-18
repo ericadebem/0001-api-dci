@@ -5,13 +5,11 @@ import {
   deleteBuss,
   getAllBuss,
   updateBuss,
+  postManybuss,
 } from "../controller/bussController.js";
 
 export const bussRouter = express.Router();
 
 bussRouter.route("/").post(createBuss).get(getAllBuss);
-bussRouter
-  .route("/:id")
-  .get(getBuss)
-  .delete(deleteBuss)
-  .patch(updateBuss);
+bussRouter.route("/many").post(postManybuss);
+bussRouter.route("/:id").get(getBuss).delete(deleteBuss).patch(updateBuss);

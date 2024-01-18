@@ -1,4 +1,5 @@
 import { Customers } from "../model/customersModel.js";
+import Data from "../customerData.json" assert { type: "json" };
 
 const handleError = (error, res) => {
   console.error(error.msg);
@@ -53,5 +54,13 @@ export const deleteCustomer = async (req, res) => {
     res.status(201).json({ customer });
   } catch (error) {
     handleError(error);
+  }
+};
+export const postManyCustomer = async (req, res) => {
+  try {
+    const customer = await Customers.insertMany(Data);
+    handleTrue(customer, res);
+  } catch (error) {
+    handleError(error, res);
   }
 };

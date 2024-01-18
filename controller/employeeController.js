@@ -1,4 +1,5 @@
 import { Employee } from "../model/employeeModel.js";
+import Data from "../employeeData.json" assert { type: "json" };
 
 const handleError = (error, res) => {
   console.error(error.msg);
@@ -49,6 +50,14 @@ export const deleteEmployee = async (req, res) => {
   try {
     const employee = await Employee.findByIdAndDelete(req.params.id);
     res.status(201).json({ employee });
+  } catch (error) {
+    handleError(error, res);
+  }
+};
+export const postManyEmployee = async (req, res) => {
+  try {
+    const employee = await Employee.insertMany(Data);
+    handleTrue(employee, res);
   } catch (error) {
     handleError(error, res);
   }

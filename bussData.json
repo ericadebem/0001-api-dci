@@ -1,0 +1,12 @@
+[
+  { "model": "Chariot", "capacity": 45, "driver": "65a922170b57bee830a43a2c" },
+  { "model": "Citation", "capacity": 45, "driver": "65a922170b57bee830a43a2c" },
+  { "model": "Freelander", "capacity": 23, "driver": "65a922170b57bee830a43a2c" },
+  { "model": "V50", "capacity": 37, "driver": "65a922170b57bee830a43a2c" },
+  { "model": "Skyhawk", "capacity": 20, "driver": "65a922170b57bee830a43a2c" },
+  { "model": "SVX", "capacity": 35, "driver": "65a922170b57bee830a43a2c" },
+  { "model": "Cobalt", "capacity": 45, "driver": "65a922170b57bee830a43a2c" },
+  { "model": "LS", "capacity": 38, "driver": "65a922170b57bee830a43a2c" },
+  { "model": "B-Series", "capacity": 29, "driver": "65a922170b57bee830a43a2c" },
+  { "model": "Sixty Special", "capacity": 24, "driver": "65a922170b57bee830a43a2c" }
+]

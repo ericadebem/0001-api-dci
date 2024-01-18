@@ -1,4 +1,5 @@
 import { Buss } from "../model/bussModel.js";
+import Data from "../bussData.json" assert { type: "json" };
 
 const handleError = (error, res) => {
   console.error(error.msg);
@@ -48,6 +49,14 @@ export const deleteBuss = async (req, res) => {
   try {
     const buss = await Buss.findByIdAndDelete(req.params.id);
     res.status(201).json({ buss });
+  } catch (error) {
+    handleError(error, res);
+  }
+};
+export const postManybuss = async (req, res) => {
+  try {
+    const buss = await Buss.insertMany(Data);
+    handleTrue(buss, res);
   } catch (error) {
     handleError(error, res);
   }

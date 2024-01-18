@@ -1,4 +1,5 @@
 import { Travel } from "../model/travelModel.js";
+import Data from "../travelData.json" assert {type: "json"}
 
 const handleError = (error, res) => {
   console.error(error.msg);
@@ -44,3 +45,11 @@ export const deleteTravel = async (req, res) => {
     handleError(error, res);
   }
 };
+export const postManyTravels = async (req, res) => {
+  try {
+    const travels = await Travel.insertMany(Data)
+    handleTrue(travels, res);
+  }catch(error) {
+    handleError(error, res);
+  }
+}
