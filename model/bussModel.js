@@ -1,17 +1,15 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 export const bussSchema = new mongoose.Schema(
   {
-    bussNumber: {
-      type: Number,
-      require: true,
-    },
+    model: String,
     capacity: {
       type: Number,
       require: true,
     },
     driver: {
-      type: Boolean,
+      type: Schema.Types.ObjectId,
+      ref: "Employee",
       require: true,
     },
   },
