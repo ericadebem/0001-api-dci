@@ -1,18 +1,21 @@
 import { Customers } from "../model/customersModel.js";
 
-const handleError = (error) => {
+const handleError = (error, res) => {
   console.error(error.msg);
   return res.status(500).json(error);
+};
+const handleTrue = (customer, res) => {
+  return customer
+    ? res.status(201).json({ customer })
+    : res.status(404).json({ msg: "Customer not found" });
 };
 
 export const getCustomer = async (req, res) => {
   try {
     const customer = await Customers.findById(req.params.id);
-    customer
-      ? res.status(201).json({ customer })
-      : res.status(404).json({ msg: "Customer not found" });
+    handleTrue(customer, res);
   } catch (error) {
-    handleError(error);
+    handleError(error, res);
   }
 };
 export const getAllCustomers = async (req, res) => {
@@ -39,11 +42,9 @@ export const updateCustomer = async (req, res) => {
       req.body,
       { new: true }
     );
-    customer
-      ? res.status(201).json({ customer })
-      : res.status(404).json({ msg: "Customer not found" });
+    handleTrue(customer, res);
   } catch (error) {
-    handleError(error);
+    handleError(error, res);
   }
 };
 export const deleteCustomer = async (req, res) => {

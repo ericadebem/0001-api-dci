@@ -1,14 +1,21 @@
 import { Employee } from "../model/employeeModel.js";
 
+const handleError = (error, res) => {
+  console.error(error.msg);
+  return res.status(500).json(error);
+};
+const handleTrue = (employee, res) => {
+  return employee
+    ? res.status(201).json({ employee })
+    : res.status(404).json({ msg: "Employee not found" });
+};
+
 export const getEmployee = async (req, res) => {
   try {
     const employee = await Employee.findById(req.params.id);
-    employee
-      ? res.status(201).json({ employee })
-      : res.status(404).json({ msg: "Employee not found" });
+    handleTrue(employee, res);
   } catch (error) {
-    console.error(error.msg);
-    res.status(500).json(error);
+    handleError(error, res);
   }
 };
 export const getAllEmployee = async (req, res) => {
@@ -16,8 +23,7 @@ export const getAllEmployee = async (req, res) => {
     const employee = await Employee.find({});
     res.status(201).json({ employee });
   } catch (error) {
-    console.error(error.msg);
-    res.status(500).json(error);
+    handleError(error, res);
   }
 };
 export const createEmployee = async (req, res) => {
@@ -26,8 +32,7 @@ export const createEmployee = async (req, res) => {
     console.log(req.body);
     res.status(201).json({ employee });
   } catch (error) {
-    console.error(error.msg);
-    res.status(500).json(error);
+    handleError(error, res);
   }
 };
 export const updateEmployee = async (req, res) => {
@@ -35,12 +40,9 @@ export const updateEmployee = async (req, res) => {
     const employee = await Employee.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
     });
-    employee
-      ? res.status(201).json({ employee })
-      : res.status(404).json({ msn: "Employee not found" });
+    handleTrue(employee, res);
   } catch (error) {
-    console.error(error.msg);
-    res.status(500).json(error);
+    handleError(error, res);
   }
 };
 export const deleteEmployee = async (req, res) => {
@@ -48,7 +50,6 @@ export const deleteEmployee = async (req, res) => {
     const employee = await Employee.findByIdAndDelete(req.params.id);
     res.status(201).json({ employee });
   } catch (error) {
-    console.error(error);
-    res.status(500).json(error);
+    handleError(error, res);
   }
 };
