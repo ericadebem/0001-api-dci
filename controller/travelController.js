@@ -19,6 +19,14 @@ export const getTravel = async (req, res) => {
     handleError(error, res);
   }
 };
+export const getAllTravel = async (req, res) => {
+  try {
+    const travel = await Travel.find();
+    handleTrue(travel, res);
+  } catch (error) {
+    handleError(error, res);
+  }
+};
 export const postTravel = async (req, res) => {
   try {
     const travel = await Travel.create(req.body);

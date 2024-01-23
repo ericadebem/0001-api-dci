@@ -3,17 +3,18 @@ import mongoose from "mongoose";
 import { customersRouter } from "./router/customersRouter.js";
 import { employeeRouter } from "./router/employeeRouter.js";
 import { travelRouter } from "./router/travelRouter.js";
-import { bussRouter } from "./router/bussRouter.js"
-
+import { bussRouter } from "./router/bussRouter.js";
+import cors from "cors";
 const app = express();
 
-const baseUrl = "/api"
+const baseUrl = "/api";
 
 app.use(express.json());
+app.use(cors())
 app.use(`${baseUrl}/customer`, customersRouter);
 app.use(`${baseUrl}/employee`, employeeRouter);
 app.use(`${baseUrl}/travel`, travelRouter);
-app.use(`${baseUrl}/buss`, bussRouter)
+app.use(`${baseUrl}/buss`, bussRouter);
 
 const conectDB = async () => {
   try {

@@ -2,6 +2,7 @@ import express from "express";
 
 import {
   getTravel,
+  getAllTravel,
   postTravel,
   updateTravel,
   deleteTravel,
@@ -11,7 +12,7 @@ import {
 export const travelRouter = express.Router();
 
 travelRouter.route("/").post(postTravel);
-travelRouter.route("/many").post(postManyTravels);
+travelRouter.route("/many").post(postManyTravels).get(getAllTravel);
 travelRouter
   .route("/:id")
   .get(getTravel)
