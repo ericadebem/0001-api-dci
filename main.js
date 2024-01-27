@@ -27,6 +27,6 @@ const conectDB = async () => {
 };
 conectDB().then(() => {
   app.listen(5050, () => {
-    console.log("server listening on port 5000");
+    console.log("server listening on port 5050");
   });
 });
